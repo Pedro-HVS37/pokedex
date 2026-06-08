@@ -1,6 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import { useState } from 'react';
 import { Alert, StyleSheet, Text, View, TextInput, Button, Image } from 'react-native';
+import { ScrollView } from 'react-native-web';
 
 export default function BuscaPokemon() {
 
@@ -28,7 +29,12 @@ export default function BuscaPokemon() {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.titulo}>Pokedex</Text>
+      <ScrollView contentContainerStyle={{ alignItems: 'center', paddingBottom: 20 }}>
+        <Image
+          source={require('./assets/icon.png')}
+          style={{ width: 200, height: 80, marginTop: 20 }}
+        />
+        <Text style={styles.titulo}>Pokedex</Text>
 
       <TextInput
         style={styles.input}
@@ -66,6 +72,7 @@ export default function BuscaPokemon() {
       )}
 
       <Text style={{ color: '#FFFFFF', marginTop: 20 }}>Fear Nintendo</Text>
+      </ScrollView>
 
       <StatusBar style="auto" />
     </View>
@@ -76,11 +83,11 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: "flex-start",
-    alignItems: "center",
     backgroundColor: '#262626',
   },
 
   titulo: {
+    marginTop: 50,
     fontSize: 30,
     marginBottom: 20,
     color: '#FFFFFF',
